@@ -75,7 +75,6 @@ function CreatePullRequestForRepositories {
 }
 
 function getAuthenticationToken {
-  $token = Get-ChildItem Env:\GITHUB_TOKEN -ErrorAction SilentlyContinue
   if ($null -eq $token) {
     $envFile = Get-Content .env
     foreach ($line in $envFile) {
